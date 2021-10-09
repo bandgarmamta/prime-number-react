@@ -7,7 +7,26 @@ export default function App() {
  
  num = Number(num);
  
- 
+ function isPrime() {
+  if (num >= 0) {
+    if (num === 0 || num === 1) {
+      setResult("It's neither prime nor composite");
+    } else if (num === 2) {
+      setResult("Yes! it is a prime number");
+    } else {
+      for (var i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) {
+          setResult("No! it's not a prime number");
+          break;
+        } else {
+          setResult("Yes! it is a prime number");
+        }
+      }
+    }
+  } else {
+    setResult("Please enter a valid number");
+  }
+}
  
  return (
    <div className="App">
